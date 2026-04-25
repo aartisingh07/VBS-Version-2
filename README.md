@@ -96,6 +96,7 @@ src/
 ## 👩‍💻 Developer
 
 Aarti Singh
+
 Software Developer | MERN Stack Learner | Building Real-World Projects
 
 ---
