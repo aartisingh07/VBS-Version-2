@@ -1,0 +1,272 @@
+/* HERO SECTION */
+.hero {
+  min-height: 92vh;
+  width: 100%;
+  padding: 60px 70px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 50px;
+  background: linear-gradient(135deg, #f8fafc, #eef4ff);
+}
+
+/* DARK MODE SUPPORT */
+body.dark-theme .hero {
+  background: linear-gradient(135deg, #0b1120, #111827);
+}
+
+/* LEFT SIDE */
+.hero-left {
+  flex: 1;
+  animation: fadeLeft 1s ease;
+}
+
+.hero-badge {
+  display: inline-block;
+  padding: 8px 14px;
+  background: rgba(244, 180, 0, 0.12);
+  color: #f4b400;
+  font-size: 0.85rem;
+  font-weight: 700;
+  border-radius: 999px;
+  letter-spacing: 0.5px;
+  margin-bottom: 22px;
+}
+
+.hero-left h1 {
+  font-size: 3.2rem;
+  line-height: 1.2;
+  color: #111827;
+  font-weight: 800;
+  margin-bottom: 18px;
+}
+
+.hero-left h1 span {
+  color: #1e3a8a;
+}
+
+body.dark-theme .hero-left h1 {
+  color: #ffffff;
+}
+
+body.dark-theme .hero-left h1 span {
+  color: #f4b400;
+}
+
+.hero-left p {
+  font-size: 1.08rem;
+  line-height: 1.8;
+  color: #4b5563;
+  max-width: 560px;
+  margin-bottom: 30px;
+}
+
+body.dark-theme .hero-left p {
+  color: #d1d5db;
+}
+
+/* BUTTONS */
+.hero-buttons {
+  display: flex;
+  gap: 16px;
+  margin-bottom: 26px;
+}
+
+.open-account {
+  padding: 14px 24px;
+  border: none;
+  background: #1e3a8a;
+  color: white;
+  font-size: 1rem;
+  font-weight: 700;
+  border-radius: 12px;
+  cursor: pointer;
+  transition: 0.3s ease;
+}
+
+.open-account:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 12px 24px rgba(30, 58, 138, 0.25);
+}
+
+.login-account {
+  padding: 14px 24px;
+  border: 2px solid #1e3a8a;
+  background: transparent;
+  color: #1e3a8a;
+  font-size: 1rem;
+  font-weight: 700;
+  border-radius: 12px;
+  cursor: pointer;
+  transition: 0.3s ease;
+}
+
+.login-account:hover {
+  background: #1e3a8a;
+  color: white;
+}
+
+body.dark-theme .login-account {
+  border-color: #f4b400;
+  color: #f4b400;
+}
+
+body.dark-theme .login-account:hover {
+  background: #f4b400;
+  color: #111827;
+}
+
+/* FEATURES */
+.hero-features {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 16px;
+  font-size: 0.95rem;
+  font-weight: 600;
+  color: #374151;
+}
+
+body.dark-theme .hero-features {
+  color: #e5e7eb;
+}
+
+/* RIGHT SIDE */
+.hero-right{
+  flex:1;
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  animation:fadeRight 1s ease;
+  background:transparent;
+}
+
+/* ANIMATIONS */
+@keyframes fadeLeft {
+  from {
+    opacity: 0;
+    transform: translateX(-40px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes fadeRight {
+  from {
+    opacity: 0;
+    transform: translateX(40px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+.preview-card{
+  display:flex;
+  flex-direction:column;
+  align-items:center;
+  background:transparent;
+  box-shadow:none;
+  border:none;
+  backdrop-filter:none;
+}
+
+.bank-card-image{
+  display:flex;
+  justify-content:center;
+}
+
+.bank-card-image img{
+  max-width:550px;
+  border-radius:20px;
+  display:block;
+  background:transparent;
+  box-shadow:0 30px 60px rgba(0,0,0,0.22);
+  transition:0.4s ease;
+  animation:floatCard 4s ease-in-out infinite;
+}
+
+.bank-card-image img:hover{
+  transform:translateY(-8px) scale(1.03);
+}
+
+@keyframes floatCard{
+  0%{
+    transform:translateY(0px);
+  }
+  50%{
+    transform:translateY(-10px);
+  }
+  100%{
+    transform:translateY(0px);
+  }
+}
+
+.preview-stats{
+  width:100%;
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:14px;
+}
+
+.stat-box{
+  padding:18px;
+  border-radius:18px;
+  background:rgba(255,255,255,0.7);
+  backdrop-filter:blur(12px);
+  text-align:center;
+  box-shadow:0 10px 25px rgba(0,0,0,0.05);
+}
+
+body.dark-theme .stat-box{
+  background:rgba(31,41,55,0.85);
+  color:white;
+}
+
+.stat-box h4{
+  font-size:1.3rem;
+  color:#1e3a8a;
+}
+
+body.dark-theme .stat-box h4{
+  color:#f4b400;
+}
+
+/* RESPONSIVE */
+@media (max-width: 992px) {
+  .hero {
+    flex-direction: column;
+    text-align: center;
+    padding: 60px 30px;
+  }
+
+  .hero-left h1 {
+    font-size: 2.6rem;
+  }
+
+  .hero-left p {
+    margin: 0 auto 28px;
+  }
+
+  .hero-buttons,
+  .hero-features {
+    justify-content: center;
+  }
+}
+
+@media (max-width: 576px) {
+  .hero-left h1 {
+    font-size: 2rem;
+  }
+
+  .hero-buttons {
+    flex-direction: column;
+  }
+
+  .open-account,
+  .login-account {
+    width: 100%;
+  }
+}
