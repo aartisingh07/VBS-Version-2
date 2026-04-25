@@ -1,16 +1,101 @@
-# React + Vite
+# 🏦 VBS Version 2.0 – Virtual Banking System
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A modern and responsive **Virtual Banking System** built using the **MERN Stack**.  
+This project is designed to simulate real-world digital banking features with a clean UI, smooth navigation, and scalable architecture.
 
-Currently, two official plugins are available:
+---
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+## 🚀 Tech Stack
 
-## React Compiler
+### Frontend
+- React.js
+- React Router DOM
+- CSS3
+- Vite
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+### Backend *(Planned / In Progress)*
+- Node.js
+- Express.js
 
-## Expanding the ESLint configuration
+### Database *(Planned)*
+- MongoDB
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+---
+
+## ✨ Features Completed
+
+### 🏠 Home Page
+- Modern responsive banking homepage
+- Sticky navbar with active page indicator
+- Dark / Light theme toggle
+- Hero section with animated debit card UI
+- Smooth scrolling navigation
+
+### 💳 Banking UI
+- Custom VBS Bank debit card design
+- Floating card animation
+- Interactive buttons
+
+### 📈 FD Rates Page
+- Fixed Deposit rates table
+- Clean responsive table layout
+- Separate page routing
+
+### 🛠 Navigation
+- React Router based multi-page structure
+- Active current page highlight
+- Smart Contact scroll navigation
+
+### 📱 Responsive Design
+- Mobile friendly navbar
+- Tablet + desktop optimized layout
+
+---
+
+## 🔥 Features Coming Soon
+
+- 🔐 Login / Register System
+- 👤 Customer Dashboard
+- 💸 Money Transfer
+- 🏦 Open New Account
+- 📍 Branch Locator
+- 📞 Full Contact Page
+- 📊 Transaction History
+- 🔔 Notifications
+- 🛡 Secure Authentication (JWT)
+
+---
+
+## 📂 Project Structure
+
+```bash
+src/
+│── components/
+│   └── Home/
+│       ├── Navbar.jsx
+│       └── Hero.jsx
+│
+│── pages/
+│   └── Home/
+│       ├── Services.jsx
+│       └── FdRates.jsx
+│
+│── styles/
+│   └── Home/
+│       ├── Navbar.css
+│       ├── Hero.css
+│       ├── Services.css
+│       └── FdRates.css
+│
+│── App.jsx
+│── main.jsx
+
+```
+
+---
+## 👩‍💻 Developer
+
+Aarti Singh
+Software Developer | MERN Stack Learner | Building Real-World Projects
+
+---
