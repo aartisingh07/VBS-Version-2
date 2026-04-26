@@ -8,6 +8,7 @@ function UserDashboard() {
     customerId: "",
     balance: 0
   });
+  const [menuOpen, setMenuOpen] = useState(false);
 
   useEffect(() => {
     const customerId = localStorage.getItem("customerId");
@@ -35,8 +36,33 @@ function UserDashboard() {
   return (
     <section className="dashboard">
 
+      {/* MOBILE TOPBAR */}
+      <div className="mobile-header">
+      <button
+        className="hamburger"
+        onClick={() => setMenuOpen(true)}
+      >☰</button>
+      <button className="mobile-logout-btn">Logout</button>
+    </div>
+
+      {/* OVERLAY */}
+      {menuOpen && (
+        <div
+          className="sidebar-overlay"
+          onClick={() => setMenuOpen(false)}
+        ></div>
+      )}
+
       {/* SIDEBAR */}
-      <aside className="sidebar">
+      <aside className={`sidebar ${menuOpen ? "show-sidebar" : ""}`}>
+
+        <button
+          className="close-menu"
+          onClick={() => setMenuOpen(false)}
+        >
+          ✕
+        </button>
+
         <div className="sidebar-logo">
           🏦 <span>VBS Bank</span>
         </div>
@@ -68,8 +94,6 @@ function UserDashboard() {
             <h1>Welcome Back, {user.fullName} 👋</h1>
             <p>Customer ID: {user.customerId}</p>
           </div>
-
-          <button className="logout-btn">Logout</button>
         </div>
 
         {/* CARDS */}
