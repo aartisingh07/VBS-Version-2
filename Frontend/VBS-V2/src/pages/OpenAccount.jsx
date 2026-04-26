@@ -1,5 +1,8 @@
 import React, { useState } from "react";
 import { NavLink } from "react-router-dom";
+import axios from "axios";
+import { useNavigate } from "react-router-dom";
+
 
 import "../styles/OpenAccount.css";
 
@@ -24,9 +27,27 @@ function OpenAccount() {
     });
   };
 
-  const handleSubmit = (e) => {
+  const navigate = useNavigate();
+
+  const handleSubmit = async (e) => {
     e.preventDefault();
-    console.log(formData);
+
+    try {
+      const res = await axios.post(
+        "http://localhost:5000/api/users/register",
+        formData
+      );
+
+      localStorage.setItem(
+        "customerId",
+        res.data.customerId
+      );
+
+      navigate("/dashboard");
+
+    } catch (error) {
+      console.log(error);
+    }
   };
 
   return (
