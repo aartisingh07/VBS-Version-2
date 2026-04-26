@@ -1,4 +1,6 @@
 import React from "react";
+import { NavLink } from "react-router-dom";
+
 import cardImage from "../../assets/debit-card.png";
 import "../../styles/Home/Hero.css";
 
@@ -18,8 +20,7 @@ function Hero() {
         </p>
 
         <div className="hero-buttons">
-          <button className="open-account">Open Account</button>
-          <button className="login-account">Login</button>
+          <button className="open-account"><NavLink to="/open-account">Open Account</NavLink></button>
         </div>
 
         <div className="hero-features">

@@ -273,3 +273,24 @@ body.dark-theme .nav-links a.active {
 body.dark-theme .nav-links a.active::after {
   background: #ffffff;
 }
+
+/* Remove default NavLink style inside buttons */
+
+.login-btn a,
+.open-btn a,
+.open-account a,
+.login-account a{
+  text-decoration:none;
+  color:inherit;
+  display:block;
+  width:100%;
+  height:100%;
+}
+
+/* Optional */
+.login-btn a:visited,
+.open-btn a:visited,
+.open-account a:visited,
+.login-account a:visited{
+  color:inherit;
+}

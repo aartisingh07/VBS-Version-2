@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { NavLink } from "react-router-dom";
+
 import "../../styles/Home/Navbar.css";
 
 function Navbar() {
@@ -46,8 +47,8 @@ function Navbar() {
           {darkMode ? "☀️" : "🌙"}
         </button>
 
-        <button className="login-btn">Login</button>
-        <button className="open-btn">Open Account</button>
+        <button className="login-btn"><NavLink to="/login">Login</NavLink></button>
+        <button className="open-btn"><NavLink to="/open-account">Open Account</NavLink></button>
 
         {/* Mobile Menu */}
         <div
