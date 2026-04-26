@@ -97,6 +97,7 @@ VBS-Version-2/
 Create .env inside Backend:
 
 MONGO_URI=your mongodb URL
+
 PORT=5000
 ---
 
