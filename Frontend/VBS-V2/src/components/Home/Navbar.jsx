@@ -34,7 +34,6 @@ function Navbar() {
         <li><NavLink to="/" end>Home</NavLink></li>
         <li><NavLink to="/services">Services</NavLink></li>
         <li><NavLink to="/rates">FD Rates</NavLink></li>
-        <li><NavLink to="/branch">Branches</NavLink></li>
         <li><NavLink to="/contact">Contact</NavLink></li>
       </ul>
 
