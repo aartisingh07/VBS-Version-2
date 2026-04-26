@@ -35,7 +35,7 @@ function Navbar() {
         <li><NavLink to="/services">Services</NavLink></li>
         <li><NavLink to="/rates">FD Rates</NavLink></li>
         <li><NavLink to="/branch">Branches</NavLink></li>
-        <li><a href="/#contact">Contact</a></li>
+        <li><NavLink to="/contact">Contact</NavLink></li>
       </ul>
 
       {/* Right Section */}

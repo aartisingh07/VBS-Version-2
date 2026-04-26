@@ -31,9 +31,19 @@ function Hero() {
 
       <div className="hero-right">
         <div className="preview-card">
-            <div className="bank-card-image">
-                <img src={cardImage} alt="VBS Debit Card" />
-            </div>
+
+          <div className="bank-card-image">
+            <img src={cardImage} alt="VBS Debit Card" />
+            <div className="card-shine"></div>
+          </div>
+
+          <div className="card-benefits">
+            <span>💳 Zero Charges</span>
+            <span>⚡ Instant Access</span>
+            <span>🔒 Safe Payments</span>
+            <span>🎁 Cashback Rewards</span>
+          </div>
+
         </div>
       </div>
     </section>
