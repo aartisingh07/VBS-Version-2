@@ -1,96 +1,104 @@
-# 🏦 VBS Version 2.0 – Virtual Banking System
+# 🏦 VBS Bank – Virtual Banking System
 
 A modern and responsive **Virtual Banking System** built using the **MERN Stack**.  
-This project is designed to simulate real-world digital banking features with a clean UI, smooth navigation, and scalable architecture.
+This project simulates real-world digital banking features such as account creation, secure login, customer dashboard, responsive UI, and backend data management.
 
 ---
 
-## 🚀 Tech Stack
+## 🚀 Live Features
+
+### 🌐 Frontend Features
+
+- Modern responsive homepage
+- Animated hero section with debit card preview
+- Professional navbar with routing
+- Services page
+- FD Rates page
+- Contact page
+- Open Account page
+- Login page
+- Fully responsive user dashboard
+- Mobile hamburger sidebar navigation
+- Logout button in mobile navbar
+- Dark / Light theme support
+- Smooth UI animations
+
+---
+
+### 🏦 Banking Features
+
+- Open new bank account
+- Auto-generated Customer ID
+- User redirected to dashboard after signup
+- Customer ID shown on dashboard
+- Real user name fetched from backend
+- Available balance section
+- Debit card preview section
+- Quick action buttons
+- Transactions history UI
+- Loan section UI
+- Settings section UI
+
+---
+
+### ⚙ Backend Features
+
+- Node.js + Express backend
+- MongoDB database integration
+- Mongoose schemas/models
+- REST API architecture
+- User registration API
+- Fetch user data API
+- Password hashing using bcryptjs
+- Environment variables using dotenv
+- CORS enabled frontend/backend connection
+
+---
+
+## 🛠 Tech Stack
 
 ### Frontend
 - React.js
 - React Router DOM
+- Axios
 - CSS3
-- Vite
 
-### Backend *(Planned / In Progress)*
+### Backend
 - Node.js
 - Express.js
-
-### Database *(Planned)*
 - MongoDB
-
----
-
-## ✨ Features Completed
-
-### 🏠 Home Page
-- Modern responsive banking homepage
-- Sticky navbar with active page indicator
-- Dark / Light theme toggle
-- Hero section with animated debit card UI
-- Smooth scrolling navigation
-
-### 💳 Banking UI
-- Custom VBS Bank debit card design
-- Floating card animation
-- Interactive buttons
-
-### 📈 FD Rates Page
-- Fixed Deposit rates table
-- Clean responsive table layout
-- Separate page routing
-
-### 🛠 Navigation
-- React Router based multi-page structure
-- Active current page highlight
-- Smart Contact scroll navigation
-
-### 📱 Responsive Design
-- Mobile friendly navbar
-- Tablet + desktop optimized layout
-
----
-
-## 🔥 Features Coming Soon
-
-- 🔐 Login / Register System
-- 👤 Customer Dashboard
-- 💸 Money Transfer
-- 🏦 Open New Account
-- 📍 Branch Locator
-- 📞 Full Contact Page
-- 📊 Transaction History
-- 🔔 Notifications
-- 🛡 Secure Authentication (JWT)
+- Mongoose
+- bcryptjs
+- dotenv
 
 ---
 
 ## 📂 Project Structure
 
 ```bash
-src/
-│── components/
-│   └── Home/
-│       ├── Navbar.jsx
-│       └── Hero.jsx
+VBS-Version-2/
+│── Frontend/
+│   ├── src/
+│   │   ├── components/
+│   │   ├── pages/
+│   │   ├── styles/
 │
-│── pages/
-│   └── Home/
-│       ├── Services.jsx
-│       └── FdRates.jsx
-│
-│── styles/
-│   └── Home/
-│       ├── Navbar.css
-│       ├── Hero.css
-│       ├── Services.css
-│       └── FdRates.css
-│
-│── App.jsx
-│── main.jsx
+│── Backend/
+│   ├── models/
+│   ├── routes/
+│   ├── controllers/
+│   ├── server.js
+│   ├── .env
 
 ```
+---
+## 🔐 Environment Variables
+
+Create .env inside Backend:
+
+MONGO_URI=your mongodb URL
+PORT=5000
+---
 
 ---
 ## 👩‍💻 Developer
