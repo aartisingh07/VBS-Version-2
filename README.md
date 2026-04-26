@@ -80,8 +80,17 @@ VBS-Version-2/
 │── Frontend/
 │   ├── src/
 │   │   ├── components/
+│   │   │   ├── User Dashboard/
+│   │   │   ├── Home/
+│   │   │   ├── Admin Dashboard/
 │   │   ├── pages/
+│   │   │   ├── User Dashboard/
+│   │   │   ├── Home/
+│   │   │   ├── Admin Dashboard/
 │   │   ├── styles/
+│   │   │   ├── User Dashboard/
+│   │   │   ├── Home/
+│   │   │   ├── Admin Dashboard/
 │
 │── Backend/
 │   ├── models/
@@ -99,6 +108,7 @@ Create .env inside Backend:
 MONGO_URI=your mongodb URL
 
 PORT=5000
+
 ---
 
 ---
