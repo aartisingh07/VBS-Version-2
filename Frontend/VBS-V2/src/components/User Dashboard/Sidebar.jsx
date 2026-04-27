@@ -1,17 +1,40 @@
-import React, { useState, useEffect } from "react";
-import { NavLink } from "react-router-dom";
+import React, { useState, useEffect, useRef } from "react";
+import { NavLink, useNavigate } from "react-router-dom";
 import axios from "axios";
 
 import "../../styles/User Dashboard/UserDashboard.css";
 
 function Sidebar() {
   const [menuOpen, setMenuOpen] = useState(false);
+  const [profileOpen, setProfileOpen] = useState(false);
+
+  const navigate = useNavigate();
+
+  const profileRef = useRef();
+  useEffect(() => {
+    const handleClickOutside = (event) => {
+      if (
+        profileRef.current &&
+        !profileRef.current.contains(event.target)
+      ) {
+        setProfileOpen(false);
+      }
+    };
+
+    document.addEventListener("mousedown", handleClickOutside);
+
+    return () => {
+      document.removeEventListener(
+        "mousedown",
+        handleClickOutside
+      );
+    };
+  }, []);
 
   const [user, setUser] = useState({
     fullName: "",
     customerId: ""
   });
-
   useEffect(() => {
     const customerId = localStorage.getItem("customerId");
 
@@ -32,10 +55,16 @@ function Sidebar() {
     }
   };
 
+  const logoutUser = () => {
+    localStorage.removeItem("customerId");
+    navigate("/login");
+  };
+
   return (
     <>
       {/* MOBILE HEADER */}
       <div className="mobile-header">
+
         <button
           className="hamburger"
           onClick={() => setMenuOpen(true)}
@@ -43,9 +72,13 @@ function Sidebar() {
           ☰
         </button>
 
-        <button className="mobile-logout-btn">
+        <button
+          className="mobile-logout-btn"
+          onClick={logoutUser}
+        >
           Logout
         </button>
+
       </div>
 
       {/* OVERLAY */}
@@ -70,6 +103,7 @@ function Sidebar() {
           🏦 <span>VBS Bank</span>
         </div>
 
+        {/* MENU */}
         <ul className="sidebar-menu">
           <li><NavLink to="/dashboard">🏠 Dashboard</NavLink></li>
           <li><NavLink to="/transfer">💸 Transfer Money</NavLink></li>
@@ -77,17 +111,39 @@ function Sidebar() {
           <li><NavLink to="/cards">💳 Cards</NavLink></li>
           <li><NavLink to="/investments">📈 Investments</NavLink></li>
           <li><NavLink to="/loans">🏦 Loans</NavLink></li>
-          <li><NavLink to="/settings">⚙ Settings</NavLink></li>
         </ul>
 
-        <div className="profile-box">
-          <div className="profile-icon">👤</div>
+        {/* PROFILE SECTION */}
+        <div className="profile-wrapper" ref={profileRef}>
 
-          <div>
-            <h4>{user.fullName}</h4>
-            <p>{user.customerId}</p>
+          {/* POPUP MENU */}
+            <div className={`profile-popup ${ profileOpen ? "popup-open" : "popup-close" }`} >
+              <button onClick={() => navigate("/profile")}>👤 View Profile</button>
+              <button>✏️ Update Profile</button>
+              <button>⚙️ Settings</button>
+              <button>🔔 Notifications</button>
+              <button className="logout" onClick={logoutUser}>🚪 Logout</button>
+            </div>
+
+          {/* PROFILE BOX */}
+          <div
+            className="profile-box"
+            onClick={() =>
+              setProfileOpen(!profileOpen)
+            }
+          >
+
+            <div className="profile-icon">👤</div>
+
+            <div>
+              <h4>{user.fullName}</h4>
+              <p>{user.customerId}</p>
+            </div>
+
           </div>
+
         </div>
+
       </aside>
     </>
   );

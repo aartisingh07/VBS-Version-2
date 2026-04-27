@@ -466,3 +466,75 @@
     display:block;
   }
 }
+
+/* PROFILE WRAPPER */
+.profile-wrapper {
+  position: relative;
+  margin-top: auto;
+}
+
+/* POPUP */
+.profile-popup {
+  position: absolute;
+  bottom: 95px;
+  left: 0;
+  width: 100%;
+  background: white;
+  border-radius: 18px;
+  padding: 12px;
+  box-shadow: 0 12px 28px rgba(0,0,0,0.12);
+
+  transition: all 0.32s ease;
+  transform-origin: bottom center;
+  z-index: 50;
+}
+
+.popup-open {
+  opacity: 1;
+  transform: translateY(0);
+  pointer-events: auto;
+}
+
+.popup-close {
+  opacity: 0;
+  transform: translateY(18px);
+  pointer-events: none;
+}
+
+.profile-popup button {
+  width: 100%;
+  border: none;
+  background: #f8fafc;
+  padding: 12px;
+  margin-bottom: 8px;
+  border-radius: 12px;
+  text-align: left;
+  font-weight: 600;
+  cursor: pointer;
+  color: #0f172a;
+}
+
+.profile-popup button:hover {
+  background: #eef2ff;
+}
+
+.logout-popup-btn {
+  background: #fee2e2 !important;
+  color: #dc2626 !important;
+}
+
+.profile-box {
+  cursor: pointer;
+}
+
+@keyframes slideUp {
+  from {
+    opacity: 0;
+    transform: translateY(15px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}

@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { NavLink } from "react-router-dom";
+import { NavLink , useNavigate } from "react-router-dom";
 
 import "../styles/Login.css";
 
@@ -19,9 +19,19 @@ function Login() {
 
   const handleSubmit = (e) => {
     e.preventDefault();
+
     console.log(formData);
+
+    localStorage.setItem(
+      "customerId",
+      formData.customerId
+    );
+
+    navigate("/dashboard");
   };
 
+  const navigate = useNavigate();
+  
   return (
     <section className="login-page">
       {/* LEFT SIDE */}

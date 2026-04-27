@@ -8,6 +8,8 @@ import FdRates from "./pages/Home/FdRates";
 import OpenAccount from "./pages/OpenAccount";
 import Login from "./pages/Login";
 
+import ProtectedRoute from "./components/ProtectedRoute";
+
 import UserLayout from "./components/User Dashboard/UserLayout";
 
 import UserDashboard from "./pages/User Dashboard/UserDashboard";
@@ -16,7 +18,6 @@ import Transactions from "./pages/User Dashboard/Transactions";
 import Loans from "./pages/User Dashboard/Loans";
 import Cards from "./pages/User Dashboard/Cards";
 import Investments from "./pages/User Dashboard/Investments";
-
 
 import { Routes, Route } from "react-router-dom";
 
@@ -46,14 +47,14 @@ function App() {
       <Route path="/login" element={<PublicLayout><Login /></PublicLayout>} />
       
       <Route element={<UserLayout />}> 
-        <Route path="/dashboard" element={<UserDashboard />} /> 
-        <Route path="/transfer" element={<TransferMoney />} /> 
-        <Route path="/transactions" element={<Transactions />} />
-        <Route path="/loans" element={<Loans />} />
-        <Route path="/cards" element={<Cards />} />
-        <Route path="/investments" element={<Investments />} />
+        <Route path="/dashboard" element={<ProtectedRoute><UserDashboard /></ProtectedRoute>}/>
+        <Route path="/transfer" element={<ProtectedRoute><TransferMoney /></ProtectedRoute>}/>
+        <Route path="/transactions" element={<ProtectedRoute><Transactions /></ProtectedRoute>}/>
+        <Route path="/cards" element={<ProtectedRoute><Cards /></ProtectedRoute>}/>
+        <Route path="/investments" element={<ProtectedRoute><Investments /></ProtectedRoute>}/>
+        <Route path="/loans" element={<ProtectedRoute><Loans /></ProtectedRoute>}/>
       </Route>
-
+      
     </Routes>
   );
 }
