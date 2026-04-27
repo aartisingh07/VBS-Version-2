@@ -1,0 +1,141 @@
+.transfer-page {
+  padding: 30px;
+  background: #f4f6f9;
+  min-height: 100vh;
+}
+
+.transfer-header h1 {
+  font-size: 34px;
+  color: #0d1b4c;
+  margin-bottom: 8px;
+}
+
+.transfer-header p {
+  color: #555;
+  font-size: 16px;
+  margin-bottom: 25px;
+}
+
+.search-box {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  background: white;
+  padding: 14px 18px;
+  border-radius: 14px;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.06);
+  margin-bottom: 25px;
+}
+
+.search-box input {
+  border: none;
+  outline: none;
+  width: 100%;
+  font-size: 15px;
+}
+
+.recent-box {
+  background: white;
+  padding: 20px;
+  border-radius: 18px;
+  margin-bottom: 28px;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.06);
+}
+
+.recent-box h3 {
+  margin-bottom: 15px;
+  color: #0d1b4c;
+}
+
+.recent-users {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+}
+
+.recent-users button {
+  padding: 10px 18px;
+  border: none;
+  background: #eef2ff;
+  color: #0d1b4c;
+  border-radius: 30px;
+  cursor: pointer;
+  font-weight: 600;
+  transition: 0.3s;
+}
+
+.recent-users button:hover {
+  background: #1e3a8a;
+  color: white;
+}
+
+.transfer-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 22px;
+}
+
+.transfer-card {
+  background: white;
+  padding: 24px;
+  border-radius: 20px;
+  box-shadow: 0 6px 18px rgba(0,0,0,0.06);
+  transition: 0.3s ease;
+}
+
+.transfer-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 10px 22px rgba(0,0,0,0.1);
+}
+
+.card-icon {
+  width: 55px;
+  height: 55px;
+  border-radius: 14px;
+  background: #1e3a8a;
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 16px;
+}
+
+.transfer-card h3 {
+  color: #111827;
+  font-size: 20px;
+  margin-bottom: 8px;
+}
+
+.transfer-card p {
+  color: #6b7280;
+  font-size: 14px;
+  min-height: 45px;
+  margin-bottom: 18px;
+}
+
+.transfer-card button {
+  width: 100%;
+  border: none;
+  padding: 12px;
+  border-radius: 12px;
+  background: #0d1b4c;
+  color: white;
+  font-weight: 600;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.transfer-card button:hover {
+  background: #facc15;
+  color: #111;
+}
+
+@media (max-width: 768px) {
+  .transfer-page {
+    padding: 20px;
+  }
+
+  .transfer-header h1 {
+    font-size: 28px;
+  }
+}

@@ -1,0 +1,156 @@
+.cards-page {
+  padding: 10px;
+}
+
+.cards-header h1 {
+  font-size: 34px;
+  color: #0f172a;
+  margin-bottom: 8px;
+}
+
+.cards-header p {
+  color: #64748b;
+  margin-bottom: 28px;
+}
+
+/* Card Preview */
+
+.debit-card-box {
+  margin-bottom: 28px;
+}
+
+.bank-card {
+  max-width: 460px;
+  background: linear-gradient(135deg,#1e3a8a,#0f172a);
+  color: white;
+  padding: 28px;
+  border-radius: 24px;
+  box-shadow: 0 12px 28px rgba(0,0,0,0.15);
+}
+
+.bank-card h2 {
+  font-size: 30px;
+  letter-spacing: 3px;
+  margin: 35px 0;
+}
+
+.card-type {
+  font-size: 15px;
+  opacity: 0.9;
+}
+
+.card-bottom {
+  display: flex;
+  justify-content: space-between;
+  font-size: 15px;
+}
+
+.status-tag {
+  margin-top: 18px;
+  font-weight: 700;
+}
+
+.frozen-card {
+  opacity: 0.75;
+  filter: grayscale(1);
+}
+
+/* Controls */
+
+.controls-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px,1fr));
+  gap: 18px;
+  margin-bottom: 28px;
+}
+
+.control-card,
+.extra-card,
+.usage-box,
+.offer-card {
+  background: white;
+  padding: 22px;
+  border-radius: 18px;
+  box-shadow: 0 8px 24px rgba(0,0,0,0.05);
+}
+
+.control-card h3,
+.extra-card h3 {
+  margin-bottom: 14px;
+  color: #0f172a;
+}
+
+.control-card button,
+.extra-card button,
+.offer-card button {
+  width: 100%;
+  border: none;
+  background: #1e3a8a;
+  color: white;
+  padding: 12px;
+  border-radius: 12px;
+  font-weight: 700;
+  cursor: pointer;
+}
+
+.control-card button:hover,
+.extra-card button:hover,
+.offer-card button:hover {
+  background: #142c70;
+}
+
+.extra-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px,1fr));
+  gap: 18px;
+  margin-bottom: 28px;
+}
+
+.extra-card p {
+  color: #64748b;
+  margin-bottom: 14px;
+}
+
+.offer-card {
+  margin-bottom: 28px;
+  background: linear-gradient(135deg,#eef2ff,#ffffff);
+}
+
+.offer-card h2 {
+  color: #1e3a8a;
+  margin-bottom: 10px;
+}
+
+.offer-card p {
+  color: #475569;
+  margin-bottom: 16px;
+}
+
+/* Usage */
+
+.usage-box h2 {
+  margin-bottom: 16px;
+  color: #0f172a;
+}
+
+.usage-row {
+  display: flex;
+  justify-content: space-between;
+  padding: 14px 0;
+  border-bottom: 1px solid #eef2f7;
+}
+
+.usage-row:last-child {
+  border-bottom: none;
+}
+
+@media (max-width: 768px) {
+  .cards-header h1 {
+    font-size: 28px;
+  }
+
+  .bank-card h2 {
+    font-size: 24px;
+    letter-spacing: 2px;
+  }
+}

@@ -1,0 +1,150 @@
+.investments-page {
+  padding: 10px;
+}
+
+.investments-header h1 {
+  font-size: 34px;
+  color: #0f172a;
+  margin-bottom: 8px;
+}
+
+.investments-header p {
+  color: #64748b;
+  margin-bottom: 28px;
+}
+
+/* Summary */
+
+.wealth-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px,1fr));
+  gap: 18px;
+  margin-bottom: 28px;
+}
+
+.wealth-card {
+  background: white;
+  padding: 22px;
+  border-radius: 18px;
+  box-shadow: 0 8px 24px rgba(0,0,0,0.05);
+}
+
+.wealth-card h4 {
+  color: #64748b;
+  margin-bottom: 10px;
+}
+
+.wealth-card h2 {
+  color: #16a34a;
+  font-size: 30px;
+}
+
+/* Plans */
+
+.plans-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px,1fr));
+  gap: 18px;
+  margin-bottom: 28px;
+}
+
+.plan-card {
+  background: white;
+  padding: 22px;
+  border-radius: 18px;
+  box-shadow: 0 8px 24px rgba(0,0,0,0.05);
+  transition: 0.3s ease;
+}
+
+.plan-card:hover {
+  transform: translateY(-5px);
+}
+
+.plan-card h3 {
+  color: #1e3a8a;
+  margin-bottom: 12px;
+}
+
+.plan-card h4 {
+  color: #16a34a;
+  margin-bottom: 10px;
+}
+
+.plan-card p {
+  color: #64748b;
+  min-height: 60px;
+  margin-bottom: 16px;
+}
+
+.plan-card button,
+.sip-actions button {
+  width: 100%;
+  border: none;
+  background: #1e3a8a;
+  color: white;
+  padding: 12px;
+  border-radius: 12px;
+  font-weight: 700;
+  cursor: pointer;
+}
+
+.plan-card button:hover,
+.sip-actions button:hover {
+  background: #142c70;
+}
+
+/* SIP */
+
+.sip-box,
+.learn-box {
+  background: white;
+  padding: 24px;
+  border-radius: 18px;
+  box-shadow: 0 8px 24px rgba(0,0,0,0.05);
+  margin-bottom: 28px;
+}
+
+.sip-box h2,
+.learn-box h2 {
+  color: #0f172a;
+  margin-bottom: 12px;
+}
+
+.sip-box p {
+  color: #64748b;
+  margin-bottom: 18px;
+}
+
+.sip-actions {
+  display: flex;
+  gap: 14px;
+  flex-wrap: wrap;
+}
+
+.sip-actions input {
+  flex: 1;
+  min-width: 220px;
+  padding: 12px 14px;
+  border: 1px solid #e5e7eb;
+  border-radius: 12px;
+  outline: none;
+}
+
+/* Learn */
+
+.learn-box ul {
+  padding-left: 18px;
+  color: #475569;
+  line-height: 2;
+}
+
+@media (max-width: 768px) {
+  .investments-header h1 {
+    font-size: 28px;
+  }
+
+  .sip-actions button,
+  .sip-actions input {
+    width: 100%;
+  }
+}

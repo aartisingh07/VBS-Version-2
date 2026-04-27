@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from "react";
 import axios from "axios";
+
 import "../../styles/User Dashboard/UserDashboard.css";
 
 function UserDashboard() {
@@ -8,12 +9,9 @@ function UserDashboard() {
     customerId: "",
     balance: 0
   });
-  const [menuOpen, setMenuOpen] = useState(false);
 
   useEffect(() => {
     const customerId = localStorage.getItem("customerId");
-
-    console.log(customerId);
 
     if (customerId) {
       fetchUser(customerId);
@@ -27,121 +25,79 @@ function UserDashboard() {
       );
 
       setUser(res.data);
-
     } catch (error) {
       console.log(error);
     }
   };
 
   return (
-    <section className="dashboard">
+    <>
+      {/* TOPBAR */}
+      <div className="topbar">
+        <div>
+          <h1>
+            Welcome to VBS Internet Banking, {user.fullName} 👋
+          </h1>
 
-      {/* MOBILE TOPBAR */}
-      <div className="mobile-header">
-      <button
-        className="hamburger"
-        onClick={() => setMenuOpen(true)}
-      >☰</button>
-      <button className="mobile-logout-btn">Logout</button>
-    </div>
+          <p>Customer ID: {user.customerId}</p>
+        </div>
+      </div>
 
-      {/* OVERLAY */}
-      {menuOpen && (
-        <div
-          className="sidebar-overlay"
-          onClick={() => setMenuOpen(false)}
-        ></div>
-      )}
+      {/* CARDS */}
+      <div className="dashboard-grid">
 
-      {/* SIDEBAR */}
-      <aside className={`sidebar ${menuOpen ? "show-sidebar" : ""}`}>
-
-        <button
-          className="close-menu"
-          onClick={() => setMenuOpen(false)}
-        >
-          ✕
-        </button>
-
-        <div className="sidebar-logo">
-          🏦 <span>VBS Bank</span>
+        <div className="card balance-card">
+          <h3>Available Balance</h3>
+          <h2>₹ {user.balance}</h2>
+          <p>Click to reveal with password</p>
         </div>
 
-        <ul className="sidebar-menu">
-          <li className="active">🏠 Dashboard</li>
-          <li>💸 Transfer Money</li>
-          <li>📜 Transactions</li>
-          <li>📈 My Activity</li>
-          <li>🏦 Loans</li>
-          <li>⚙ Settings</li>
-        </ul>
-
-        <div className="profile-box">
-          <div className="profile-icon">👤</div>
-          <div>
-            <h4>{user.fullName}</h4>
-            <p>{user.customerId}</p>
-          </div>
-        </div>
-      </aside>
-
-      {/* MAIN */}
-      <main className="dashboard-main">
-
-        {/* TOPBAR */}
-        <div className="topbar">
-          <div>
-            <h1>Welcome Back, {user.fullName} 👋</h1>
-            <p>Customer ID: {user.customerId}</p>
-          </div>
+        <div className="card debit-card">
+          <h3>Debit Card</h3>
+          <p>VBS Platinum Active</p>
+          <h2>**** **** **** 9010</h2>
         </div>
 
-        {/* CARDS */}
-        <div className="dashboard-grid">
+        <div className="card quick-card">
+          <h3>Quick Actions</h3>
+          <br />
 
-          <div className="card balance-card">
-            <h3>Available Balance</h3>
-            <h2>₹ {user.balance}</h2>
-            <p>Click to reveal with password</p>
-          </div>
+          <p><b><u>Send Money</u></b> to your friends and family</p>
+          <br />
 
-          <div className="card debit-card">
-            <h3>Debit Card</h3>
-            <p>VBS Platinum Active</p>
-            <h2>**** **** **** 9010</h2>
-          </div>
+          <p><b><u>Pay Bills</u></b> - Gas, Water, Electricity and more</p>
+          <br />
 
-          <div className="card quick-card">
-            <h3>Quick Actions</h3>
-            <button>Send Money</button>
-            <button>Pay Bills</button>
-            <button>Mini Statement</button>
-          </div>
+          <p><b><u>Check History</u></b></p>
+          <br />
 
+          <p><b><u>Apply for Loans</u></b> within seconds</p>
         </div>
 
-        {/* TRANSACTIONS */}
-        <div className="transactions-section">
-          <h2>Recent Transactions</h2>
+      </div>
 
-          <div className="transaction-item">
-            <span>Amazon Payment</span>
-            <span>- ₹2,499</span>
-          </div>
+      {/* TRANSACTIONS */}
+      <div className="transactions-section">
 
-          <div className="transaction-item">
-            <span>Salary Credit</span>
-            <span className="green">+ ₹35,000</span>
-          </div>
+        <h2>Recent Transactions</h2>
 
-          <div className="transaction-item">
-            <span>Transfer to Rahul</span>
-            <span>- ₹5,000</span>
-          </div>
+        <div className="transaction-item">
+          <span>Amazon Payment</span>
+          <span>- ₹2,499</span>
         </div>
 
-      </main>
-    </section>
+        <div className="transaction-item">
+          <span>Salary Credit</span>
+          <span className="green">+ ₹35,000</span>
+        </div>
+
+        <div className="transaction-item">
+          <span>Transfer to Rahul</span>
+          <span>- ₹5,000</span>
+        </div>
+
+      </div>
+    </>
   );
 }
 
